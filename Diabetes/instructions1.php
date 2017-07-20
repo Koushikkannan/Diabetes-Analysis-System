@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {margin:0;}
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+ul.topnav li {float: right;}
+
+ul.topnav li a {
+  display: inline-block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+ul.topnav li a:hover {background-color: #555;}
+
+ul.topnav li.icon {display: none;}
+
+@media screen and (max-width:680px) {
+  ul.topnav li:not(:first-child) {display: none;}
+  ul.topnav li.icon {
+    float: right;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width:680px) {
+  ul.topnav.responsive {position: relative;}
+  ul.topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left;
+  }
+}
+</style>
+</head>
+<body>
+
+<ul class="topnav" id="myTopnav">
+  <li><a href="about1.php">About us</a></li>
+  <li><a href="user2.php">Login</a></li>
+  <li><a href="login_new.php">Home</a></li>
+  <li class="icon">
+    <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
+  </li>
+</ul>
+
+<div style="padding-left:200px">
+  <h2>Instructions:-</h2></div>
+  <div style="padding-left:270px">
+  <h4><u>The user should have a minimum knowledge to use this system as given as follows:</u></h4>
+  <ul>
+  <h4><li>This system is only for the users having DIABETES(i.e., This system is for diagonising the Diabetes patients).<br><!--Because the system is designed in such a way that the system assumes the user having diabetes by default.--></li></h4>
+  <h4><li>User should be able to understand technical terms(in English)</li></h4>
+   <h4><li>User have to answer for all the questions given in a proper way</li></h4>
+  <h4><li>Incomplete data will cause you incorrect result</li></h4> 
+  <h4><li>The developer of this system is not responsible,if the wrong input data is passed and it will lead to the wrong diagnosis and medication report generation </li></h4>
+  <h4><li>This is not a replacement for human expert but in check before consult with a doctor</li></h4>
+  </ul>
+  
+</div>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
+
+</body>
+</html>

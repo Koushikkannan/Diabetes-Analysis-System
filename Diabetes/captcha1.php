@@ -1,0 +1,20 @@
+<?php
+session_start();
+header("content-type:image/png");
+if(isset($_SESSION['my_captcha']))
+{
+	unset($_SESSION['my_captcha']);
+}
+$string1="abcdefghijklmnopqrstuvwxyz";
+$string2="1234567890";
+$string=$string1.$string2;
+$string=str_shuffle($string);
+$random_text=substr($string,0,5);
+$_SESSION['my_captcha']=$random_text;
+$im=@ImageCreate(80,20) or die("cannot initialize");
+$background_color=ImageColorAllocate($im,200,218,237);
+$text_color=ImageColorAllocate($im,51,51,225);
+ImageString($im,5,5,2,$_SESSION['my_captcha'],$text_color);
+Imagepng($im);
+imagedestroy($im);
+?>
